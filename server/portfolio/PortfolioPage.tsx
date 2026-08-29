@@ -1,5 +1,6 @@
 "use client";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -198,7 +199,7 @@ function ContactForm() {
       <input
         type="hidden"
         name="access_key"
-        value="9ec9ccb7-7da0-46a0-8c1b-6789ad88a45f"
+        value={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "9ec9ccb7-7da0-46a0-8c1b-6789ad88a45f"}
       />
       <input type="hidden" name="from_name" value="Ayush Kumar Portfolio" />
       <input
@@ -243,17 +244,7 @@ function ContactForm() {
   );
 }
 export function PortfolioPage() {
-  useEffect(() => {
-    const o = new IntersectionObserver(
-      (es) =>
-        es.forEach(
-          (e) => e.isIntersecting && e.target.classList.add("revealed"),
-        ),
-      { threshold: 0.14 },
-    );
-    document.querySelectorAll(".reveal").forEach((x) => o.observe(x));
-    return () => o.disconnect();
-  }, []);
+  useScrollReveal();
   return (
     <main>
       <header className="topbar-wrap">

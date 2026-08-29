@@ -1,4 +1,4 @@
-import type { SkillGroup } from "@/main/types/portfolio";
+import type { SkillGroup } from "@/types/portfolio";
 
 export const skillGroups: SkillGroup[] = [
   { title: "Languages", skills: ["JavaScript", "TypeScript", "HTML5", "CSS3"] },

@@ -1,228 +1,172 @@
 # Ayush Kumar — Developer Portfolio
 
-A modern and responsive personal portfolio showcasing my skills, engineering journey, featured projects, certifications and contact information.
+A modern and responsive personal portfolio built with standard **Next.js** (App Router), **React**, and **TypeScript**, styled with modern CSS, and ready for direct deployment to **Vercel**.
 
-The portfolio includes scroll-based animations, overlapping project cards, responsive layouts, resume download and a working contact form.
+Showcases full-stack engineering skills, project builds, credentials, certifications, downloadable resume, and an integrated Web3Forms contact form.
+
+---
 
 ## Features
 
-* Responsive desktop, tablet and mobile layouts
-* Animated hero section
-* Skills and tools showcase
-* Engineering Chronicles timeline
-* Sticky overlapping project cards
-* Certificates and milestones
-* Downloadable resume
-* Web3Forms contact form
-* Direct email and social links
-* Reduced-motion accessibility support
-* Deployment-ready Cloudflare/OpenAI Sites configuration
+* **Responsive Design**: Fluid layouts optimized for desktop, tablet, and mobile devices.
+* **Hero Section**: Typographic layout with scanline aesthetics and resume download.
+* **Skills Matrix**: Categorized capability matrix across languages, frontend, backend, databases, cloud, and AI tools.
+* **Marquee Banner**: Smooth, continuous skill ticker.
+* **Engineering Chronicle**: Timeline detailing development journey, projects, and education.
+* **Featured Projects**: Sticky overlapping cards with tech stacks and GitHub links.
+* **Certificates & Milestones**: Verified credentials with external verification links.
+* **Web3Forms Contact Form**: Functional contact form with validation, status feedback, and bot prevention.
+* **Direct Links**: Email, telephone, GitHub, and LinkedIn links.
+* **Accessibility**: Reduced-motion preference detection across animations.
+
+---
 
 ## Tech Stack
 
-* Next.js
-* React
-* TypeScript
-* Vinext
-* Vite
-* CSS
-* Lucide React
-* Web3Forms
-* Cloudflare Workers
-* OpenAI Sites
+* **Framework**: [Next.js](https://nextjs.org/) (App Router)
+* **Library**: [React 19](https://react.dev/)
+* **Language**: [TypeScript](https://www.typescriptlang.org/)
+* **Styling**: Modern CSS & Tailwind CSS
+* **Icons**: [Lucide React](https://lucide.dev/)
+* **Contact API**: [Web3Forms](https://web3forms.com/)
+* **Deployment**: [Vercel](https://vercel.com/)
+
+---
 
 ## Project Structure
 
 ```text
 ├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
+│   ├── globals.css          # Global styles, variables, keyframes & theme
+│   ├── layout.tsx           # Root layout with HTML shell & SEO metadata
+│   └── page.tsx             # Thin entry rendering PortfolioPage
+│
+├── config/
+│   └── site.ts              # Site navigation and profile configuration
+│
+├── data/
+│   └── skills.ts            # Skills matrix and marquee items
+│
+├── hooks/
+│   └── useScrollReveal.ts   # Scroll-reveal intersection observer hook
+│
+├── public/
+│   ├── Ayush-Kumar-Resume.pdf
+│   ├── ayush-portrait.png
+│   ├── favicon.svg
+│   ├── certificates/        # Credential & workshop certificates
+│   └── projects/            # Project concept screenshots
 │
 ├── server/
 │   └── portfolio/
-│       ├── PortfolioPage.tsx
-│       ├── sections/
-│       ├── content/
-│       ├── hooks/
-│       ├── icons/
-│       ├── styles/
-│       └── types/
+│       └── PortfolioPage.tsx # Portfolio page component & interactive sections
 │
-├── public/
-│   ├── projects/
-│   ├── Ayush-Kumar-Resume.pdf
-│   ├── ayush-portrait.png
-│   └── favicon.svg
-│
-├── build/
-├── scripts/
 ├── tests/
+│   └── portfolio.test.mjs   # Node.js automated test suite
+│
+├── types/
+│   └── portfolio.ts         # TypeScript interfaces and types
+│
 ├── vendor/
-├── worker/
-├── .openai/
-├── .env.example
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+│   └── shadcn-tailwind-4.13.0.css
+│
+├── .env.example             # Environment variable template
+├── eslint.config.mjs        # ESLint flat configuration
+├── next.config.ts           # Standard Next.js configuration
+├── package.json             # Scripts & dependencies
+├── postcss.config.mjs       # PostCSS configuration
+└── tsconfig.json            # TypeScript configuration
 ```
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 
-Install the following before running the project:
-
-* Node.js 20 or newer
-* npm
+* **Node.js**: `>=20.0.0` (or Node 22+)
+* **npm**: `>=10.0.0`
 
 ### Installation
 
-Clone the repository:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ayushkumar1420/Ayush-portfolio.git
+   cd Ayush-portfolio
+   ```
 
-```bash
-git clone https://github.com/ayushkumar1420/YOUR-REPOSITORY-NAME.git
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Open the project directory:
+3. Configure environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Edit `.env.local` and add your Web3Forms access key:
+   ```env
+   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
+   ```
 
-```bash
-cd YOUR-REPOSITORY-NAME
-```
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-Create your environment file:
-
-```powershell
-Copy-Item .env.example .env.local
-```
-
-Add the required values to `.env.local`.
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open the local URL displayed in the terminal, usually:
-
-```text
-http://localhost:5173
-```
-
-## Available Commands
-
-```bash
-npm run dev
-```
-
-Starts the local development server.
-
-```bash
-npm run typecheck
-```
-
-Checks the TypeScript code for errors.
-
-```bash
-npm run lint
-```
-
-Checks the codebase using ESLint.
-
-```bash
-npm test
-```
-
-Runs the project tests.
-
-```bash
-npm run build
-```
-
-Creates and verifies the production build.
-
-## Updating Portfolio Content
-
-Most editable portfolio information is stored in:
-
-```text
-server/portfolio/content/portfolio-data.ts
-```
-
-Update this file to change:
-
-* Personal information
-* Skills and tools
-* AI tools
-* Engineering experience
-* Projects
-* Certificates
-* Contact information
-* Social links
-* Resume and image paths
-
-The portfolio content is separated from the UI so updates can be made without modifying component layouts.
-
-## Environment Variables
-
-Copy `.env.example` to `.env.local` and provide the required values.
-
-Example:
-
-```env
-NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
-```
-
-Never commit `.env.local` or other files containing private credentials.
-
-## Contact Form
-
-The contact form uses Web3Forms and provides:
-
-* Required-field validation
-* Loading state
-* Success feedback
-* Error feedback
-* Spam protection
-* Direct email access
-
-## Deployment
-
-Before deploying, run:
-
-```bash
-npm run typecheck
-npm run lint
-npm test
-npm run build
-```
-
-The repository contains configuration for Cloudflare Workers and OpenAI Sites. Keep the following paths in their expected locations:
-
-```text
-.openai/
-build/
-scripts/
-vendor/
-worker/
-vite.config.ts
-```
-
-Generated directories such as `node_modules`, `.wrangler` and `.sites-runtime` should not be committed.
-
-## Contact
-
-* GitHub: [ayushkumar1420](https://github.com/ayushkumar1420)
-* LinkedIn: [Ayush Kumar](https://www.linkedin.com/in/ayush-kumar-83a969347)
-* Email: [ayushmaurya496@gmail.com](mailto:ayushmaurya496@gmail.com)
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-Built by Ayush Kumar.
+## Available Commands
+
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Starts the Next.js local development server (`localhost:3000`) |
+| `npm run typecheck` | Runs TypeScript type checking (`tsc --noEmit`) |
+| `npm run lint` | Lints the codebase with ESLint |
+| `npm test` | Runs the automated Node.js test suite |
+| `npm run build` | Builds the production application with `next build` |
+| `npm start` | Starts the production server |
+
+---
+
+## Deploying to Vercel
+
+This project is configured as a standard Next.js application for zero-config deployment on Vercel.
+
+### Option 1: Vercel Dashboard (Recommended)
+
+1. Push your repository to GitHub / GitLab / Bitbucket.
+2. Go to [Vercel Dashboard](https://vercel.com/dashboard) and click **Add New** → **Project**.
+3. Import your portfolio repository.
+4. Vercel automatically detects the **Next.js** framework preset:
+   - **Framework Preset**: `Next.js`
+   - **Root Directory**: `./` (repository root)
+   - **Build Command**: `next build` (or `npm run build`)
+   - **Output Directory**: Default Next.js output (`.next`)
+   - **Install Command**: `npm install`
+5. In **Environment Variables**, add:
+   - **Key**: `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
+   - **Value**: `your_web3forms_access_key`
+   - **Environments**: Production, Preview, Development
+6. Click **Deploy**.
+
+### Option 2: Vercel CLI
+
+```bash
+npm i -g vercel
+vercel
+```
+
+Follow the prompts and add the environment variable when requested.
+
+---
+
+## Contact
+
+* **Developer**: Ayush Kumar
+* **Email**: [ayushmaurya496@gmail.com](mailto:ayushmaurya496@gmail.com)
+* **Phone**: [+91 9335280820](tel:+919335280820)
+* **GitHub**: [ayushkumar1420](https://github.com/ayushkumar1420)
+* **LinkedIn**: [Ayush Kumar](https://www.linkedin.com/in/ayush-kumar-83a969347)
+

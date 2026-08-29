@@ -2,7 +2,7 @@
 
 @import "tw-animate-css";
 
-@import "../../pack/vendor/shadcn-tailwind-4.13.0.css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
 
 :root {
   --ink: #161716;
@@ -1335,6 +1335,13 @@ footer {
 .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (scripting: none) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @keyframes hero-enter {

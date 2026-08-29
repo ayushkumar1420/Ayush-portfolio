@@ -11,7 +11,7 @@ export const siteConfig = {
   x: "",
   resumePath: "/Ayush-Kumar-Resume.pdf",
   portraitPath: "/ayush-portrait.png",
-  web3FormsAccessKey: import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? "",
+  web3FormsAccessKey: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "",
 } as const;
 
 export const navigationItems = ["Home", "Skills", "Experience", "Projects", "Certificates", "Contact"] as const;

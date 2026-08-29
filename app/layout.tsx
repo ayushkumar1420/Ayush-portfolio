@@ -6,9 +6,6 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Ayush Kumar — full-stack developer building scalable web products, real-time systems, and AI-powered applications.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-  other: {
-    "codex-preview": "development",
-  },
 };
 
 export default function RootLayout({
