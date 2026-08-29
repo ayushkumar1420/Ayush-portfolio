@@ -18,8 +18,9 @@
         "name": "next"
       }
     ],
+    "types": ["vite/client", "node"],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*", "./main/*"]
     }
   },
   "include": [

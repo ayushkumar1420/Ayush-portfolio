@@ -2,7 +2,7 @@
 
 @import "tw-animate-css";
 
-@import "../vendor/shadcn-tailwind-4.13.0.css";
+@import "../../pack/vendor/shadcn-tailwind-4.13.0.css";
 
 :root {
   --ink: #161716;
