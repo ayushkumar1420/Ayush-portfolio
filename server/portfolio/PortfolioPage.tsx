@@ -11,6 +11,8 @@ import {
   MapPin,
   Send,
 } from "lucide-react";
+
+
 const groups = [
   ["Languages", ["JavaScript", "TypeScript", "HTML5", "CSS3"]],
   [
@@ -77,7 +79,11 @@ const groups = [
   ],
   ["Design & Collaboration", ["Figma", "Canva"]],
 ] as const;
+
+
 const all = groups.flatMap((x) => x[1]);
+
+
 const projects = [
   [
     "01",
@@ -134,6 +140,8 @@ const projects = [
     "doodoo.png",
   ],
 ] as const;
+
+
 const certs = [
   [
     "01",
@@ -176,6 +184,8 @@ const certs = [
     "",
   ],
 ] as const;
+
+
 function ContactForm() {
   const [s, setS] = useState("idle");
   async function submit(e: FormEvent<HTMLFormElement>) {
@@ -243,6 +253,8 @@ function ContactForm() {
     </form>
   );
 }
+
+
 export function PortfolioPage() {
   useScrollReveal();
   return (
@@ -272,6 +284,7 @@ export function PortfolioPage() {
           </div>
         </nav>
       </header>
+
       <section className="hero" id="home">
         <div className="ambient ambient-one" />
         <div className="ambient ambient-two" />
@@ -318,6 +331,7 @@ export function PortfolioPage() {
           </div>
         </div>
       </section>
+
       <section className="statement reveal">
         <p className="eyebrow">What I build</p>
         <h2>
@@ -326,6 +340,7 @@ export function PortfolioPage() {
           rises.
         </h2>
       </section>
+
       <div className="marquee">
         <div className="marquee-track">
           {[...all, ...all].map((x, i) => (
@@ -336,6 +351,7 @@ export function PortfolioPage() {
           ))}
         </div>
       </div>
+
       <section className="section skills-section" id="skills">
         <div className="section-heading reveal">
           <div>
@@ -372,6 +388,7 @@ export function PortfolioPage() {
           ))}
         </div>
       </section>
+
       <section className="section chronicle-section" id="experience">
         <div className="section-heading reveal">
           <div>
@@ -400,7 +417,7 @@ export function PortfolioPage() {
             <div className="timeline-year">2023 — 2027</div>
             <div>
               <p className="timeline-type">
-                Buddha Institute of Technology, Gorakhpur
+                Buddha Institute of Technology, Gida Gorakhpur
               </p>
               <h3>B.Tech — Information Technology</h3>
               <p>
@@ -412,6 +429,7 @@ export function PortfolioPage() {
           </article>
         </div>
       </section>
+
       <section className="section projects-section" id="projects">
         <div className="section-heading reveal">
           <div>
@@ -471,6 +489,7 @@ export function PortfolioPage() {
           ))}
         </div>
       </section>
+
       <section className="section certificates-section" id="certificates">
         <div className="section-heading reveal">
           <div>
@@ -486,7 +505,7 @@ export function PortfolioPage() {
         </div>
         <div className="stats reveal">
           <div>
-            <strong>6</strong>
+            <strong>6+</strong>
             <span>Featured projects</span>
           </div>
           <div>
@@ -526,6 +545,7 @@ export function PortfolioPage() {
           ))}
         </div>
       </section>
+
       <section className="contact-section" id="contact">
         <div className="contact-copy reveal">
           <p className="eyebrow">Get in touch / 05</p>
@@ -546,6 +566,7 @@ export function PortfolioPage() {
           <ContactForm />
         </div>
       </section>
+
       <footer>
         <div className="footer-name">AYUSH KUMAR</div>
         <div className="footer-card">
@@ -614,6 +635,7 @@ export function PortfolioPage() {
           <p>© {new Date().getFullYear()} Ayush Kumar. All rights reserved.</p>
         </div>
       </footer>
+
     </main>
   );
 }
