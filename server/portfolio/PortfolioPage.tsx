@@ -190,15 +190,16 @@ function ContactForm() {
   const [s, setS] = useState("idle");
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setS("sending");
     try {
       const r = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          body: new FormData(e.currentTarget),
+          body: new FormData(form),
         }),
         j = await r.json();
       if (!r.ok || !j.success) throw Error();
-      e.currentTarget.reset();
+      form.reset();
       setS("success");
     } catch {
       setS("error");
@@ -568,7 +569,10 @@ export function PortfolioPage() {
       </section>
 
       <footer>
-        <div className="footer-name">AYUSH KUMAR</div>
+        <div className="footer-name" aria-label="Ayush Kumar">
+          <span>AYUSH</span>
+          <span>KUMAR</span>
+        </div>
         <div className="footer-card">
           <div>
             <p className="footer-title">Contact</p>
@@ -580,9 +584,9 @@ export function PortfolioPage() {
               <Phone size={15} />
               +91 9335280820
             </a>
-            <p>
+            <p className="footer-location">
               <MapPin size={15} />
-              Gorakhpur, Uttar Pradesh
+              <span>Gorakhpur, Uttar Pradesh</span>
             </p>
             <p>Remote and on-site opportunities</p>
           </div>
@@ -605,8 +609,20 @@ export function PortfolioPage() {
             <a href="/Ayush-Kumar-Resume.pdf" download>
               Download resume
             </a>
-            <span className="disabled-social">WhatsApp — coming soon</span>
-            <span className="disabled-social">X — coming soon</span>
+            <a
+              href="https://wa.me/qr/U3EY7Y2DKO56J1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp
+            </a>
+            <a
+              href="https://x.com/ayushkumar1420_"
+              target="_blank"
+              rel="noreferrer"
+            >
+              X
+            </a>
           </div>
           <div>
             <p className="footer-title">Navigate</p>

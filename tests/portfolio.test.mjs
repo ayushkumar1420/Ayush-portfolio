@@ -13,8 +13,8 @@ test("site configuration contains valid contact and social info", () => {
   assert.equal(siteConfig.portraitPath, "/ayush-portrait.png");
   assert.match(siteConfig.github, /^https:\/\/github\.com\//);
   assert.match(siteConfig.linkedin, /^https:\/\/www\.linkedin\.com\//);
-  assert.equal(siteConfig.whatsapp, "");
-  assert.equal(siteConfig.x, "");
+  assert.equal(siteConfig.whatsapp, "https://wa.me/qr/U3EY7Y2DKO56J1");
+  assert.equal(siteConfig.x, "https://x.com/ayushkumar1420_");
 });
 
 test("navigation items include all major sections", () => {
@@ -68,6 +68,8 @@ test("PortfolioPage component defines contact form with Web3Forms integration", 
   assert.match(portfolioPageContent, /AI Second Brain/);
   assert.match(portfolioPageContent, /Neublix SaaS/);
   assert.match(portfolioPageContent, /DooDoo/);
-  assert.match(portfolioPageContent, /WhatsApp — coming soon/);
-  assert.match(portfolioPageContent, /X — coming soon/);
+  assert.match(portfolioPageContent, /https:\/\/wa\.me\/qr\/U3EY7Y2DKO56J1/);
+  assert.match(portfolioPageContent, /https:\/\/x\.com\/ayushkumar1420_/);
+  assert.match(portfolioPageContent, /const form = e\.currentTarget/);
+  assert.match(portfolioPageContent, /form\.reset\(\)/);
 });
