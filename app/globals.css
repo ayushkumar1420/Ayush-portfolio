@@ -1235,7 +1235,7 @@ footer {
   font-size: clamp(3.15rem,10.4vw,8.6rem);
   font-weight: 900;
   line-height: .82;
-  letter-spacing: -.055em;
+  letter-spacing: -0.0005em;
   white-space: nowrap;
 }
 
